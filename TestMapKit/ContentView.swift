@@ -32,6 +32,11 @@ struct MapView: UIViewRepresentable {
         mapCamera.heading = 45
         
         view.camera = mapCamera
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        view.addAnnotation(annotation)
+        view.selectAnnotation(annotation, animated: true)
     }
 
     func makeCoordinator() -> Coordinator {
